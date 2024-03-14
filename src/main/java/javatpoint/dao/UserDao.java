@@ -26,9 +26,8 @@ public class UserDao {
 			transaction = session.beginTransaction();
 			// save the student object
 
-			user =(User) session.save(user);
-
-
+			Integer id  = (Integer) session.save(user);
+			user.setId(id);
 			// commit transaction
 			transaction.commit();
 		} catch (Exception e) {
